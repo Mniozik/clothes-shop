@@ -1,0 +1,75 @@
+Wszystko ma obejmować:
+
+        - opis hierarchii zasobów,
+
+        - znaczenie poszczególnych operacji protokołu HTTP w odniesieniu do zasobów,
+
+        - opis formatów danych używanych do reprezentacji danych wejściowych i wyjściowych dla poszczególnych zasobów.
+
+		- proste zasoby oferujące pełen zakres operacji CRUD,
+
+        - zasoby-kontrolery umożliwiające atomowe wykonanie aktualizacji kilku innych zasobów,
+
+        - (tokeny) zasoby przyjmujące zlecenia w trybie POST once exactly, eliminujące wielokrotne wysyłanie tych samych danych.
+
+		- (wersjonowanie) Wykonywanie aktualizacji zasobów (PUT) powinno być wykonywane w trybie weryfikacji, wykluczającej niesygnalizowane nadpisywanie współbieżnie nanoszonych zmian przez różnych klientów (lost update problem).
+
+		
+        Implementacja powinna wykorzystywać dowolnie wybrane środowisko programistyczne (framework) wspierające budowę usług sieciowych REST.
+
+		Do prezentacji usługi można wykorzystać dowolnego klienta protokołu HTTP lub stworzyć dodatkową własną aplikację.
+
+
+
+GET - pobranie
+POST - utworzenie nowego
+PUT - aktualizacja 
+PATCH - modyfikacja istniejącego
+DELETE - usuniecie
+
+Projekt dotyczy „Internetowy sklep odzieżowy„ 
+    Opisz projekt usługi sieciowej REST 
+        W projekcie powinny muszą następujące elementy:
+        1. opis hierarchii zasobów,
+        2. znaczenie poszczególnych operacji protokołu HTTP w odniesieniu do zasobów,
+        3. opis formatów danych używanych do reprezentacji danych wejściowych i wyjściowych dla poszczególnych zasobów.
+        /users
+        •	dodawanie użytkownikow
+        •	usuwanie 
+        /users/{user_id}/
+        •	wyświetl informacje o danym użytkowniku
+        •	zmien informacje o danym użytkowniku
+        •	usun danego uzytkownika
+        /products
+        •	dodaj produkt np. o id=1 
+        •	dodawanie/usuwanie/modyfikowanie produktów
+        •	
+        /categories 
+        •	wyświetl wszystkie produkty które są w kategorii np. koszulka
+        •	(każdy produkt zalicza się do jakies kategorii np. koszulki, spodnie, bluzy)
+            jak to zrobić by products/{id} był w tej kategorii?
+        /orders
+        •	wyświetl wszystkie zamówienia dla danego użytkownika
+        •	edytowanie danego zamówienia (np. koszulka, spodnie)
+
+
+Napisz program z użyciem python, flask, sqlalchemy, flasksqlalchemy, sqlite.
+Wymogi dotyczące programu:
+1. proste zasoby oferujące pełen zakres operacji CRUD,
+2. zasoby-kolekcje będące reprezentacją zbiorów innych zasobów i stosujące stronicowanie w swoich reprezentacjach,
+3. zasoby-kontrolery umożliwiające atomowe wykonanie aktualizacji kilku innych zasobów,
+4. zasoby przyjmujące zlecenia w trybie POST once exactly, eliminujące wielokrotne wysyłanie tych samych danych.
+5. Wykonywanie aktualizacji zasobów (PUT) powinno być wykonywane w trybie weryfikacji, wykluczającej niesygnalizowane nadpisywanie współbieżnie nanoszonych zmian przez różnych klientów (lost update problem).
+
+
+SQLAlchemy - biblioteka: polaczenie do bazy danych i korzystanie z niej za pomocą naszej aplikacji
+	Możemy korzystać z bazy danych bez pisania kodu SQL
+    Tabela jest reprezentowana przez class
+    A obiekty tej classy to wpisy w tej tabeli
+
+FlaskSQLALchemy - łącznik pomiędzy SQLAlchemy a Flask. Automatycznie stworzone połaczenie z baza danych
+Jako baze danych wykorzystujemy SQLite która nie wymaga osobnej konfiguracji, jest jako bilblioteka i wbudowany w Python( choć ja musialem doinstalować pip install chyba) 
+
+
+
+
