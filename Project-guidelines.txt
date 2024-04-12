@@ -19,7 +19,7 @@ Wszystko ma obejmować:
 
 		Do prezentacji usługi można wykorzystać dowolnego klienta protokołu HTTP lub stworzyć dodatkową własną aplikację.
 
-
+---
 
 GET - pobranie
 POST - utworzenie nowego
@@ -43,7 +43,7 @@ Projekt dotyczy „Internetowy sklep odzieżowy„
         /products
         •	dodaj produkt np. o id=1 
         •	dodawanie/usuwanie/modyfikowanie produktów
-        •	np.: http://localhost:5000/products?page=1&per_page=15
+        •	
         /categories 
         •	wyświetl wszystkie produkty które są w kategorii np. koszulka
         •	(każdy produkt zalicza się do jakies kategorii np. koszulki, spodnie, bluzy)
